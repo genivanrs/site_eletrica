@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeG Soluções</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo" onclick="navegar('home')">DeG <span>Soluções</span></div>
+        <div class="nav-icons">
+            <a href="https://www.instagram.com/degsolutions/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <i class="fab fa-whatsapp" onclick="abrirModal()"></i>
+        </div>
+    </header>
+
+    <main id="content"></main>
+
+    <div id="modalOrcamento" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h3>Orçamento WhatsApp</h3>
+            <form id="formOrcamento">
+                <input type="text" id="m-nome" placeholder="Seu Nome" required>
+                <select id="m-servico" required>
+                    <option value="">Selecione o serviço</option>
+                    <option value="Elétrica">Elétrica</option>
+                    <option value="Lavagem">Lavagem Automotiva</option>
+                    <option value="Higienização">Higienizações</option>
+                </select>
+                <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+            </form>
+        </div>
+    </div>
+
+    <footer><p>© 2026 DeG Soluções</p></footer>
+
+    <script src="servicos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
