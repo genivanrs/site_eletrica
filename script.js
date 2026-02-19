@@ -6,6 +6,7 @@ function navegar(pagina) {
     window.scrollTo(0, 0);
 
     if (pagina === 'home') renderHome(content);
+    else if (pagina === 'politica') renderPolitica(content);
     else if (DADOS_SERVICOS[pagina]) {
         renderPaginaServico(content, DADOS_SERVICOS[pagina], pagina);
     }
@@ -14,8 +15,8 @@ function navegar(pagina) {
 function renderHome(container) {
     container.innerHTML = `
         <section class="hero-clean">
-            <h1>Soluções Profissionais para Você</h1>
-            <p>Serviços Elétricos, Tecnologia e Estética</p>
+            <h1>Soluções Profissionais em Tecnologia e Serviços</h1>
+            <p>Qualidade, segurança e inovação para sua casa ou empresa</p>
         </section>
         <div class="services-grid">
             <div class="card" onclick="navegar('eletrica')">
@@ -113,6 +114,41 @@ document.getElementById('formOrcamento').onsubmit = function(e) {
 window.onclick = function(e) {
     if (e.target.id === 'modalOrcamento') fecharModal();
 };
+
+function renderPolitica(container) {
+    container.innerHTML = `
+        <div class="detalhes-container">
+            <button class="btn-voltar" onclick="navegar('home')">← Voltar</button>
+
+            <h2>Política de Privacidade</h2>
+
+            <p>A sua privacidade é importante para nós. É política da <strong>DeG Soluções</strong> respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site.</p>
+
+            <h3>📌 Coleta de Informações</h3>
+            <p>Coletamos informações pessoais apenas quando realmente necessário para fornecer um serviço, como nome e serviço solicitado via WhatsApp.</p>
+
+            <h3>📌 Uso das Informações</h3>
+            <p>As informações coletadas são utilizadas exclusivamente para atendimento, orçamento e comunicação com o cliente.</p>
+
+            <h3>📌 Compartilhamento</h3>
+            <p>Não compartilhamos informações pessoais publicamente ou com terceiros, exceto quando exigido por lei.</p>
+
+            <h3>📌 Cookies e Anúncios</h3>
+            <p>Podemos utilizar cookies para melhorar a experiência do usuário. O Google pode usar cookies para exibir anúncios relevantes com base em visitas anteriores.</p>
+
+            <h3>📌 Compromisso do Usuário</h3>
+            <p>O usuário se compromete a fazer uso adequado das informações e conteúdos oferecidos no site.</p>
+
+            <h3>📌 Alterações</h3>
+            <p>Esta política pode ser atualizada periodicamente.</p>
+
+            <p style="margin-top:20px;font-size:13px;color:#64748b">
+                Última atualização: ${new Date().getFullYear()}
+            </p>
+        </div>
+    `;
+}
+
 
 // Iniciar
 document.addEventListener('DOMContentLoaded', () => navegar('home'));
